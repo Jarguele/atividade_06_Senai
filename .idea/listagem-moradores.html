@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Moradores</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Listagem de Moradores</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Apartamento</th>
+        <th>Bloco</th>
+        <th>CPF</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="morador : ${moradores}">
+        <td th:text="${morador.id}"></td>
+        <td th:text="${morador.nome}"></td>
+        <td th:text="${morador.apartamento}"></td>
+        <td th:text="${morador.bloco}"></td>
+        <td th:text="${morador.cpf}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
